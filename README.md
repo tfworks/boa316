@@ -36,7 +36,7 @@ $ aws cloudformation package \
 $ aws cloudformation deploy \
     --stack-name ut-provider \
     --template build.yml \
-    --parameter-overrides UnicornTrackerEndpoint=${UT_ENDPOINT}
+    --parameter-overrides UnicornTrackerEndpoint=${UT_ENDPOINT} \
     --capabilities CAPABILITY_IAM
 ```
 
