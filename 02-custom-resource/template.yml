@@ -1,0 +1,6 @@
+Resources:
+  CustomResourceExample:
+    Type: Custom::Resource
+    Properties:
+      ServiceToken: !Sub "arn:aws:lambda:${AWS::Region}:${AWS::AccountId}:function:CustomUnicornTracker"
+      UnicornName: "Werner"

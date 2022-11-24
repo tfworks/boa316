@@ -1,0 +1,1 @@
+To not require a lot of tools and techniques, we decided to ship a lambda layer with the project so you don't have to compile.

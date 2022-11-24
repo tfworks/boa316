@@ -1,0 +1,23 @@
+Transform: AWS::Serverless-2016-10-31
+Parameters:
+  UnicornTrackerEndpoint:
+    Type: String
+Resources:
+  LambdaLayer:
+    Type: AWS::Serverless::LayerVersion
+    Properties:
+      ContentUri: "lambda_layer/lambda_layer.zip"
+  LambdaFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: CustomUnicornTracker
+      Handler: function.handler
+      Runtime: python3.9
+      CodeUri: lambda/
+      Layers:
+        - !Ref LambdaLayer
+      Environment:
+        Variables:
+          UT_ENDPOINT: !Ref UnicornTrackerEndpoint
+      Policies:
+        - AWSLambdaExecute
